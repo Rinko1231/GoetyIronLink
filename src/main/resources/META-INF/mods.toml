@@ -9,7 +9,7 @@ modLoader="javafml" #mandatory
 loaderVersion="[47,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
-license="MIT"
+license="GPLv3"
 # A URL to refer people to when problems occur with this mod
 #issueTrackerURL="http://my.issue.tracker/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
@@ -19,9 +19,9 @@ modId="goetyironlink" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="1.0.0" #mandatory
+version="1.0.1" #mandatory
 # A display name for the mod
-displayName="goetyironlink" #mandatory
+displayName="Goety Iron Link" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -33,7 +33,7 @@ displayName="goetyironlink" #mandatory
 # A text field displayed in the mod UI
 authors="rinko1231" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description='goetyironlink.'
+description='When a Magic Focus from Goety is enchanted with potency, and the player also has a Spellbook from Iron’s Spellbooks equipped, the Focus will gain additional Potency levels based on the spell power provided by Iron’s Spellbooks. Support is included for several spell schools introduced by Iron’s Spellbooks and its add-ons like T.O.Magic, GTBC Geomancy, Fantasy Ending.'
 [[mixins]]
 config = "${modId}.mixins.json"
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

@@ -1,0 +1,19 @@
+{
+  "tooltip.goetyironlink.spell_bonus": "Spell Type Bonus: %s",
+  "tooltip.goetyironlink.multiplier": "Multiplier: %s",
+  "tooltip.goetyironlink.potency_bonus": "Extra Potency Level: %s",
+  "tooltip.goetyironlink.hold_alt": "Hold ALT to view Iron Spell bonus",
+
+  "goetyironlink.spelltype.fire": "Fire",
+  "goetyironlink.spelltype.ice": "Ice",
+  "goetyironlink.spelltype.lightning": "Lightning",
+  "goetyironlink.spelltype.blood": "Blood",
+  "goetyironlink.spelltype.nature": "Nature",
+  "goetyironlink.spelltype.ender": "Ender",
+  "goetyironlink.spelltype.evocation": "Evocation",
+  "goetyironlink.spelltype.eldritch": "Eldritch",
+  "goetyironlink.spelltype.holy": "Holy",
+  "goetyironlink.spelltype.aqua": "Aqua",
+  "goetyironlink.spelltype.geo": "Geomancy",
+  "goetyironlink.spelltype.fantasy": "Fantasy"
+}

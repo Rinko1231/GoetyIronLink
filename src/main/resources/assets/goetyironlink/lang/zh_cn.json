@@ -1,0 +1,19 @@
+{
+  "tooltip.goetyironlink.spell_bonus": "接受法术流派加成：%s",
+  "tooltip.goetyironlink.multiplier": "加成系数：%s",
+  "tooltip.goetyironlink.potency_bonus": "额外强效等级：%s",
+  "tooltip.goetyironlink.hold_alt": "按住ALT查看Iron法术加成",
+
+  "goetyironlink.spelltype.fire": "炽焰",
+  "goetyironlink.spelltype.ice": "冰霜",
+  "goetyironlink.spelltype.lightning": "雷霆",
+  "goetyironlink.spelltype.blood": "猩红",
+  "goetyironlink.spelltype.nature": "自然",
+  "goetyironlink.spelltype.ender": "末影",
+  "goetyironlink.spelltype.evocation": "唤魔",
+  "goetyironlink.spelltype.eldritch": "远古巫术",
+  "goetyironlink.spelltype.holy": "神圣",
+  "goetyironlink.spelltype.aqua": "源流",
+  "goetyironlink.spelltype.geo": "岩土",
+  "goetyironlink.spelltype.fantasy": "梦幻"
+}

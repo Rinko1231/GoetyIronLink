@@ -16,14 +16,24 @@ public class SpellIronPowerConfig {
     private static final Gson GSON = new Gson();
     private static final Path CONFIG_PATH = FMLPaths.CONFIGDIR.get().resolve("goety_iron_spell_power.json");
 
-    private static Map<String, Double> spellMultipliers = new HashMap<>();
+    public static class PowerData {
+        public String type;
+        public double multiplier;
+
+        public PowerData(String type, double multiplier) {
+            this.type = type;
+            this.multiplier = multiplier;
+        }
+    }
+
+    private static Map<String, PowerData> spellPowerMap = new HashMap<>();
 
     static {
-        // 默认配置，可自行扩充
-        spellMultipliers.put("IceSpikeSpell", 9.0);
-        spellMultipliers.put("SpellFrostNova", 0.5);
-        spellMultipliers.put("SpellNetherBolt", 0.7);
-        spellMultipliers.put("SpellBloodSurge", 0.6);
+        // 默认配置
+        spellPowerMap.put("ZombieSpell", new PowerData("blood", 0.6));
+        spellPowerMap.put("IceSpikeSpell", new PowerData("ice", 0.6));
+        spellPowerMap.put("FrostNovaSpell", new PowerData("ice", 0.6));
+        spellPowerMap.put("HuntingSpell", new PowerData("nature", 0.6));
     }
 
     public static void load() {
@@ -33,8 +43,8 @@ public class SpellIronPowerConfig {
                 saveDefaults();
                 return;
             }
-            Type type = new TypeToken<Map<String, Double>>() {}.getType();
-            spellMultipliers = GSON.fromJson(new FileReader(file), type);
+            Type type = new TypeToken<Map<String, PowerData>>() {}.getType();
+            spellPowerMap = GSON.fromJson(new FileReader(file), type);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,14 +52,20 @@ public class SpellIronPowerConfig {
 
     private static void saveDefaults() {
         try (FileWriter writer = new FileWriter(CONFIG_PATH.toFile())) {
-            GSON.toJson(spellMultipliers, writer);
+            GSON.toJson(spellPowerMap, writer);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static double getMultiplier(String spellName) {
-        return spellMultipliers.getOrDefault(spellName, 0.0);
+        PowerData data = spellPowerMap.get(spellName);
+        return data != null ? data.multiplier : 0.0;
+    }
+
+    public static String getType(String spellName) {
+        PowerData data = spellPowerMap.get(spellName);
+        return data != null ? data.type : null;
     }
 
     public static void reload() {
