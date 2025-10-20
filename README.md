@@ -20,7 +20,7 @@
   "FireboltSpell": { "type": "fire", "multiplier": 0.8 }
 }
 ```
-Goety 法术类名可在官方仓库查看：com.Polarice3.Goety.common.magic.spells
+Goety 法术类名可在官方仓库查看：com.Polarice3.Goety.common.magic.spells (https://github.com/Polarice3/Goety-2/tree/1.20/src/main/java/com/Polarice3/Goety/common/magic/spells)
 
 type：指定该法术对应的法强类别。支持的内置类型包括：fire、ice、blood、nature、ender、evocation、wind、holy、eldritch、lightning、aqua、geo、fantasy
 
@@ -48,7 +48,7 @@ Example configuration：
   "FireboltSpell": { "type": "fire", "multiplier": 0.8 }
 }
 ```
-Goety spell class names: see the official Goety repository at com.Polarice3.Goety.common.magic.spells
+Goety spell class names: see the official Goety repository at com.Polarice3.Goety.common.magic.spells (https://github.com/Polarice3/Goety-2/tree/1.20/src/main/java/com/Polarice3/Goety/common/magic/spells)
 
 type: specifies the corresponding spell power type. Built-in supported types include: fire, ice, blood, nature, ender, evocation, wind, holy, eldritch, lightning, aqua, geo, fantasy.
 
