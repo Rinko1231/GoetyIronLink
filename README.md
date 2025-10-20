@@ -1,4 +1,4 @@
-# Goety & Iron's Spellbooks Integration Guide
+# Goety Iron Link Guide
 
 ## 中文说明
 
@@ -21,6 +21,9 @@
 }
 ```
 Goety 法术类名可在官方仓库查看：com.Polarice3.Goety.common.magic.spells
+
 type：指定该法术对应的法强类别。支持的内置类型包括：fire、ice、blood、nature、ender、evocation、wind、holy、eldritch、lightning、aqua、geo、fantasy
-如果 type 写错或未安装对应模组（如 "aqua" 在没有 T.O Magic 'n Extras 时），该法术不会获得额外加成
+
 multiplier：收益系数，会与对应法强相乘，得到最终的 Potency 加成。
+
+如果 type 写错或未安装对应模组（如 "aqua" 在没有 T.O Magic 'n Extras 时），该法术不会获得额外加成
