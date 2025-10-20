@@ -17,11 +17,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
@@ -34,9 +36,12 @@ public class GoetyIronLink {
 
     public GoetyIronLink() {
         // 注册事件总线 (Event Bus)
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         SpellIronPowerConfig.load();
+
         MinecraftForge.EVENT_BUS.register(this);
     }
+
 
     @SubscribeEvent
     public void onAddReloadListener(AddReloadListenerEvent event) {
@@ -62,7 +67,7 @@ public class GoetyIronLink {
 
             if (type == null || multiplier <= 0) return; // 未配置，跳过
 
-            int ironPower = switch (type.toLowerCase()) {
+            double ironPower = switch (type.toLowerCase()) {
                 case "fire" -> getIronFirePower(player);
                 case "ice" -> getIronIcePower(player);
                 case "lightning" -> getIronLightningPower(player);
@@ -97,79 +102,79 @@ public class GoetyIronLink {
         }
     }
 
-    public static int getIronFirePower(LivingEntity caster)
+    public static double getIronFirePower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.FIRE_SPELL_POWER.get());
-        int firePower =0;
+        double firePower =0;
         if(attr != null)
-            firePower = (int) attr.getValue();
+            firePower = attr.getValue();
         return firePower;
     }
-    public static int getIronIcePower(LivingEntity caster)
+    public static double getIronIcePower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.ICE_SPELL_POWER.get());
-        int icePower =0;
+        double icePower =0;
         if(attr != null)
-            icePower = (int) attr.getValue();
+            icePower = attr.getValue();
         return icePower;
     }
-    public static int getIronLightningPower(LivingEntity caster)
+    public static double getIronLightningPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.LIGHTNING_SPELL_POWER.get());
-        int lightningPower =0;
+        double lightningPower =0;
         if(attr != null)
-            lightningPower = (int) attr.getValue();
+            lightningPower =  attr.getValue();
         return lightningPower;
     }
-    public static int getIronBloodPower(LivingEntity caster)
+    public static double getIronBloodPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.BLOOD_SPELL_POWER.get());
-        int bloodPower =0;
+        double bloodPower =0;
         if(attr != null)
-            bloodPower = (int) attr.getValue();
+            bloodPower =  attr.getValue();
         return bloodPower;
     }
-    public static int getIronNaturePower(LivingEntity caster)
+    public static double getIronNaturePower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.NATURE_SPELL_POWER.get());
-        int naturePower =0;
+        double naturePower =0;
         if(attr != null)
-            naturePower = (int) attr.getValue();
+            naturePower =  attr.getValue();
         return naturePower;
     }
-    public static int getIronEnderPower(LivingEntity caster)
+    public static double getIronEnderPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.ENDER_SPELL_POWER.get());
-        int enderPower =0;
+        double enderPower =0;
         if(attr != null)
-            enderPower = (int) attr.getValue();
+            enderPower = attr.getValue();
         return enderPower;
     }
-    public static int getIronEvocationPower(LivingEntity caster)
+    public static double getIronEvocationPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.EVOCATION_SPELL_POWER.get());
-        int evocationPower =0;
+        double evocationPower =0;
         if(attr != null)
-            evocationPower = (int) attr.getValue();
+            evocationPower = attr.getValue();
         return evocationPower;
     }
-    public static int getIronEldritchPower(LivingEntity caster)
+    public static double getIronEldritchPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.ELDRITCH_SPELL_POWER.get());
-        int EldritchPower =0;
+        double EldritchPower =0;
         if(attr != null)
-            EldritchPower = (int) attr.getValue();
+            EldritchPower = attr.getValue();
         return EldritchPower;
     }
-    public static int getIronHolyPower(LivingEntity caster)
+    public static double getIronHolyPower(LivingEntity caster)
     {
         AttributeInstance attr = caster.getAttribute(AttributeRegistry.HOLY_SPELL_POWER.get());
-        int HolyPower =0;
+        double HolyPower =0;
         if(attr != null)
-            HolyPower = (int) attr.getValue();
+            HolyPower =  attr.getValue();
         return HolyPower;
     }
-    public static int getTOAquaPower(LivingEntity caster) {
+    public static double getTOAquaPower(LivingEntity caster) {
         if (!ModList.get().isLoaded("traveloptics")) {
             return 0;
         }
@@ -181,12 +186,12 @@ public class GoetyIronLink {
             AttributeInstance instance = caster.getAttribute(attr);
             if (instance == null) return 0;
 
-            return (int) instance.getValue();
+            return instance.getValue();
         } catch (Exception e) {
             return 0;
         }
     }
-    public static int getGTBCGeomancyPower(LivingEntity caster) {
+    public static double getGTBCGeomancyPower(LivingEntity caster) {
         if (!ModList.get().isLoaded("gtbcs_geomancy_plus")) {
             return 0;
         }
@@ -198,12 +203,12 @@ public class GoetyIronLink {
             AttributeInstance instance = caster.getAttribute(attr);
             if (instance == null) return 0;
 
-            return (int) instance.getValue();
+            return instance.getValue();
         } catch (Exception e) {
             return 0;
         }
     }
-    public static int getFantasyPower(LivingEntity caster) {
+    public static double getFantasyPower(LivingEntity caster) {
         if (!ModList.get().isLoaded("fantasy_ending")) {
             return 0;
         }
@@ -215,7 +220,7 @@ public class GoetyIronLink {
             AttributeInstance instance = caster.getAttribute(attr);
             if (instance == null) return 0;
 
-            return (int) instance.getValue();
+            return instance.getValue();
         } catch (Exception e) {
             return 0;
         }
