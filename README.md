@@ -1,0 +1,25 @@
+# Goety & Iron's Spellbooks Integration Guide
+
+## 中文说明
+
+### 功能概述
+当 **诡厄巫法** 的 **聚晶** 被附魔**强效**时，如果玩家同时装备了 **Iron's Spellbooks** 的 **Spellbook**，该聚晶会根据 ISS 提供的法术强度获得额外的 **强效等级**。  
+支持 Iron's Spellbooks 的一些流派，以及可选模组（如 TO 的源流法术）。
+
+### 配置文件说明
+配置文件路径：`config/goety_iron_spell_power.json`  
+
+配置文件示例：
+
+```json
+{
+  "ZombieSpell": { "type": "blood", "multiplier": 0.7 },
+  "IceSpikeSpell": { "type": "ice", "multiplier": 0.6 },
+  "FrostNovaSpell": { "type": "ice", "multiplier": 0.6 },
+  "HuntingSpell": { "type": "nature", "multiplier": 0.7 },
+  "FireboltSpell": { "type": "fire", "multiplier": 0.8 }
+}
+Goety 法术类名可在官方仓库查看：com.Polarice3.Goety.common.magic.spells
+type：指定该法术对应的法强类别。支持的内置类型包括：fire、ice、blood、nature、ender、evocation、wind、holy、eldritch、lightning、aqua、geo、fantasy
+如果 type 写错或未安装对应模组（如 "aqua" 在没有 TravelOptics 时），该法术不会获得额外加成
+multiplier：收益系数，会与对应法强相乘，得到最终的 Potency 加成。
