@@ -61,6 +61,8 @@ public class WandUtilMixin {
                     case "aqua" -> getTOAquaPower(livingEntity);
                     case "geo" -> getGTBCGeomancyPower(livingEntity);
                     case "fantasy" -> getFantasyPower(livingEntity);
+                    case "abyssal" -> getCataclysmAbyssalPower(livingEntity);
+                    case "technomancy" -> getCataclysmTechnomancyPower(livingEntity);
                     default -> 0;
                 };
 

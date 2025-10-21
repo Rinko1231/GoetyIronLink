@@ -15,5 +15,7 @@
   "goetyironlink.spelltype.holy": "Holy",
   "goetyironlink.spelltype.aqua": "Aqua",
   "goetyironlink.spelltype.geo": "Geomancy",
-  "goetyironlink.spelltype.fantasy": "Fantasy"
+  "goetyironlink.spelltype.fantasy": "Fantasy",
+  "goetyironlink.spelltype.abyssal": "Abyssal",
+  "goetyironlink.spelltype.technomancy": "Technomancy"
 }

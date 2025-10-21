@@ -15,5 +15,7 @@
   "goetyironlink.spelltype.holy": "神圣",
   "goetyironlink.spelltype.aqua": "源流",
   "goetyironlink.spelltype.geo": "岩土",
-  "goetyironlink.spelltype.fantasy": "梦幻"
+  "goetyironlink.spelltype.fantasy": "梦幻",
+  "goetyironlink.spelltype.abyssal": "深渊",
+  "goetyironlink.spelltype.technomancy": "械术"
 }

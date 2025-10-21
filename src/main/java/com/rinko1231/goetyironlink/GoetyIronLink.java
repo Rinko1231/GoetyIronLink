@@ -17,13 +17,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
@@ -36,7 +34,7 @@ public class GoetyIronLink {
 
     public GoetyIronLink() {
         // 注册事件总线 (Event Bus)
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         SpellIronPowerConfig.load();
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -80,6 +78,8 @@ public class GoetyIronLink {
                 case "aqua" -> getTOAquaPower(player);
                 case "geo" -> getGTBCGeomancyPower(player);
                 case "fantasy" -> getFantasyPower(player);
+                case "abyssal" -> getCataclysmAbyssalPower(player);
+                case "technomancy" -> getCataclysmTechnomancyPower(player);
                 default -> 0;
             };
 
@@ -215,6 +215,40 @@ public class GoetyIronLink {
         try {
             //从注册表动态获取
             Attribute attr = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("fantasy_ending", "fantasy_spell_power"));
+            if (attr == null) return 0;
+
+            AttributeInstance instance = caster.getAttribute(attr);
+            if (instance == null) return 0;
+
+            return instance.getValue();
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+    public static double getCataclysmAbyssalPower(LivingEntity caster) {
+        if (!ModList.get().isLoaded("cataclysm_spellbooks")) {
+            return 0;
+        }
+        try {
+            //从注册表动态获取
+            Attribute attr = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("cataclysm_spellbooks", "abyssal_spell_power"));
+            if (attr == null) return 0;
+
+            AttributeInstance instance = caster.getAttribute(attr);
+            if (instance == null) return 0;
+
+            return instance.getValue();
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+    public static double getCataclysmTechnomancyPower(LivingEntity caster) {
+        if (!ModList.get().isLoaded("cataclysm_spellbooks")) {
+            return 0;
+        }
+        try {
+            //从注册表动态获取
+            Attribute attr = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("cataclysm_spellbooks", "technomancy_spell_power"));
             if (attr == null) return 0;
 
             AttributeInstance instance = caster.getAttribute(attr);
