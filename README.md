@@ -4,7 +4,7 @@
 
 ### 功能概述
 当 **诡厄巫法** 的 **聚晶** 被附魔 **强效** 时，如果玩家同时装备了 **Iron's Spellbooks** 的 **Spellbook**，该聚晶会根据 ISS 提供的法术强度获得额外的 **强效等级**。  
-支持 Iron's Spellbooks 的一些流派，以及可选模组（如 T.O Magic 'n Extras 的源流法术）。
+支持 Iron's Spellbooks 的各种流派，以及附属模组（如 T.O Magic 'n Extras 的源流法术）。
 
 ### 配置文件说明
 配置文件路径：`config/goety_iron_spell_power.json`  
@@ -32,7 +32,7 @@ multiplier：收益系数，会与对应法强相乘，得到最终的 Potency �
 
 ### Overview
 When a **Magic Focus** from **Goety** is enchanted with **Potency** , and the player also equips a **Spellbook** from **Iron's Spellbooks**, the Focus will gain additional Potency levels based on the spell power provided by Iron’s Spellbooks.
-Support is included for several spell schools from Iron's Spellbooks, as well as optional add-on mods (e.g., source-flow spells from T.O Magic 'n Extras).
+Support is included for spell schools from Iron's Spellbooks, as well as add-on mods (e.g., aqua spells from T.O Magic 'n Extras).
 
 ### Configuration File
 Path:`config/goety_iron_spell_power.json`  
