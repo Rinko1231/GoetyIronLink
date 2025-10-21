@@ -22,7 +22,7 @@
 ```
 Goety 法术类名可在官方仓库查看：com.Polarice3.Goety.common.magic.spells (https://github.com/Polarice3/Goety-2/tree/1.20/src/main/java/com/Polarice3/Goety/common/magic/spells)
 
-type：指定该法术对应的法强类别。支持的内置类型包括：fire、ice、blood、nature、ender、evocation、wind、holy、eldritch、lightning、aqua、geo、fantasy、abyssal、technomancy.
+type：指定该法术对应的法强类别。支持的内置类型包括：fire、ice、blood、nature、ender、evocation、holy、eldritch、lightning、aqua、geo、fantasy、abyssal、technomancy.
 
 multiplier：收益系数，会与对应法强相乘，得到最终的 Potency 加成。
 
@@ -50,7 +50,7 @@ Example configuration：
 ```
 Goety spell class names: see the official Goety repository at com.Polarice3.Goety.common.magic.spells (https://github.com/Polarice3/Goety-2/tree/1.20/src/main/java/com/Polarice3/Goety/common/magic/spells)
 
-type: specifies the corresponding spell power type. Built-in supported types include: fire, ice, blood, nature, ender, evocation, wind, holy, eldritch, lightning, aqua, geo, fantasy、abyssal、technomancy.
+type: specifies the corresponding spell power type. Built-in supported types include: fire, ice, blood, nature, ender, evocation, holy, eldritch, lightning, aqua, geo, fantasy, abyssal, technomancy.
 
 multiplier: the coefficient to multiply by the corresponding spell power, resulting in the final Potency bonus.
 
