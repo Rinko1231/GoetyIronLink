@@ -63,7 +63,7 @@ public class WandUtilMixin {
                     case "fantasy" -> getFantasyPower(livingEntity);
                     case "abyssal" -> getCataclysmAbyssalPower(livingEntity);
                     case "technomancy" -> getCataclysmTechnomancyPower(livingEntity);
-                    default -> 0;
+                    default -> getCustomSpellPower(livingEntity, type.toLowerCase());
                 };
 
                 int bonus = Math.max(0, (int) Math.round(ironPower * multiplier));

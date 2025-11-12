@@ -80,7 +80,7 @@ public class GoetyIronLink {
                 case "fantasy" -> getFantasyPower(player);
                 case "abyssal" -> getCataclysmAbyssalPower(player);
                 case "technomancy" -> getCataclysmTechnomancyPower(player);
-                default -> 0;
+                default -> getCustomSpellPower(player, type.toLowerCase());
             };
 
             int bonus = (int) Math.round(ironPower * multiplier);
@@ -259,4 +259,25 @@ public class GoetyIronLink {
             return 0;
         }
     }
+    public static double getCustomSpellPower(LivingEntity caster, String type) {
+        // 假定都在kubejs命名空间算了
+        ResourceLocation attrLoc = new ResourceLocation("kubejs", type.toLowerCase() + "_spell_power");
+
+        try {
+            Attribute attr = ForgeRegistries.ATTRIBUTES.getValue(attrLoc);
+            if (attr == null) {
+                return 0;
+            }
+
+            AttributeInstance instance = caster.getAttribute(attr);
+            if (instance == null) {
+                return 0;
+            }
+
+            return instance.getValue();
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
 }
